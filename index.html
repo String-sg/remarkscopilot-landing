@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Remarks Co-Pilot — Overview & Metrics</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .metric-card { border: 1px solid #e0e0e0; border-radius: .5rem; padding: 1.5rem; background: #fff; }
+    .metric-card .display-6 { font-weight: 700; }
+    /* Header styling */
+    .metric-card h5, .metric-card h6 { color: #6c757d; font-weight: 600; margin-bottom: 0.5rem; }
+    .metric-card small, .metric-card p small { display: block; font-size: .875rem; margin-top: .25rem; margin-bottom: 0; }
+    .metric-card hr { margin: 1rem 0; border-color: #e0e0e0; }
+    .avatar { width: 48px; height: 48px; border-radius: 50%; object-fit: cover; }
+    .avatar-group img { margin-right: -0.75rem; border: 2px solid #fff; }
+    .badge-maint { background-color: #d4edda; color: #155724; padding: .5rem 1rem; border-radius: .5rem; cursor: help; }
+    nav a { margin-right: 1rem; text-decoration: none; color: #0d6efd; }
+    section { padding-top: 4rem; margin-top: -4rem; }
+    .change { font-weight: 500; }
+    .change.positive { color: #198754; }
+    .change.negative { color: #dc3545; }
+  </style>
+  <script>
+    const quarters = ['2025 Q2','2025 Q1','2024 Q4','2024 Q3'];
+    const metrics = {
+      '2025 Q2': { totalUsers:'1825', mau:'53,894', csat:'4.2', cost:'$50*', teamMembers:3, remarks:'7664' },
+      '2025 Q1': { totalUsers:'1641', mau:'48,000', csat:'4.1', cost:'$50*', teamMembers:3, remarks:'1991' },
+      '2024 Q4': { totalUsers:'1557', mau:'45,000', csat:'4.0', cost:'$50*', teamMembers:3, remarks:'6374' },
+      '2024 Q3': { totalUsers:'1445', mau:'42,000', csat:'3.9', cost:'$3,379.48', teamMembers:3, remarks:'8343' }
+    };
+    function get(obj,path){ return path.split('.').reduce((o,p)=>o&&o[p],obj); }
+    function parseNumber(str){ return parseFloat(str.toString().replace(/[^0-9\.]/g,'')) || 0; }
+  </script>
+</head>
+<body class="bg-light text-dark">
+  <div class="container py-5">
+    <nav class="mb-4">
+      <a href="#hero">Overview</a><a href="#metrics">Metrics</a><a href="#updates">Updates</a>
+    </nav>
+    <section id="hero" class="mb-5">
+      <div class="row align-items-center">
+        <div class="col-md-8">
+          <h1>Remarks Co-Pilot</h1>
+          <p>🔗 <a href="https://remarkscopilot.string.sg">remarkscopilot.string.sg</a></p>
+          <p class="lead">Accelerate your first draft of report student descriptors with AI</p>
+        </div>
+        <div class="col-md-4 text-md-end">
+          <span class="badge-maint" title="not in active development but available for use">Maintenance</span>
+          <p class="mt-2"><small>Since 2023 &middot; Built for teachers</small></p>
+        </div>
+      </div>
+    </section>
+    <section id="overview" class="mb-5">
+      <h2>Overview</h2>
+      <div>
+        Built in Q3 2023 as an extension of a hackathon project with Open Government Products, <a href="https://www.hack.gov.sg/2023/string">String</a>.<br>
+        This is now independently maintained as a citizen-run poduct.
+      </div>
+    </section>
+    <section id="metrics" class="mb-5">
+      <h2 class="mb-4">Metrics</h2>
+      <div class="mb-4">
+        <label for="quarter" class="form-label">Quarter</label>
+        <select id="quarter" class="form-select w-auto"></select>
+      </div>
+      <!-- Team -->
+      <div class="metric-card mb-4">
+        <h5>Team Members</h5>
+        <p class="display-6 d-inline" data-metric="teamMembers"></p>
+        <div class="avatar-group mt-2">
+          <img src="team/kahhow.png" class="avatar">
+          <img src="team/rayner.png" class="avatar">
+          <img src="team/natalie.png" class="avatar">
+        </div>
+      </div>
+      <!-- Cost -->
+      <div class="metric-card mb-4">
+        <h5>Cost Per Quarter</h5>
+        <p class="display-6" data-metric="cost"></p>
+        <small class="change" data-change="cost"></small>
+      </div>
+      <!-- Usage + Remarks -->
+      <div class="metric-card mb-4">
+        <h5>Usage</h5>
+        <div class="row text-start">
+          <div class="col-md-6">
+            <p class="display-6" data-metric="totalUsers"></p>
+            <small>Total users</small>
+            <small class="change" data-change="totalUsers"></small>
+          </div>
+          <div class="col-md-6">
+            <p class="display-6" data-metric="remarks"></p>
+            <small>Remarks generated</small>
+            <small class="change" data-change="remarks"></small>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="updates" class="mb-5">
+      <h2>Updates</h2>
+      <style>
+        .timeline { position: relative; margin-left: 2rem; padding-left: 1rem; border-left: 2px solid #0d6efd; }
+        .timeline-item { position: relative; margin-bottom: 2rem; }
+        .timeline-item::before {
+        content: '';
+        position: absolute;
+        left: -1.6rem;
+        /* align circle vertically with header text */
+        top: 0.4rem;
+        width: 1rem;
+        height: 1rem;
+        background: #0d6efd;
+        border-radius: 50%;
+      }
+        .timeline-item h5 { color: #0d6efd; font-weight: 600; margin-bottom: 0.5rem; }
+        .timeline-item ul { margin-top: 0; padding-left: 1.25rem; }
+      </style>
+      <div class="timeline">
+        <div class="timeline-item">
+          <h5>Q2 2025</h5>
+          <ul>
+            <li>Migrated out of beta.gov to maintain independently</li>
+          </ul>
+        </div>
+        <div class="timeline-item">
+          <h5>Q1 2024 - Q1 2025</h5>
+          <ul>
+            <li>Maintenance</li>
+          </ul>
+        </div>
+        <div class="timeline-item">
+          <h5>Q4 2023</h5>
+          <ul>
+            <li>Enable users to edit and save their own prompts</li>
+          </ul>
+        </div>
+        <div class="timeline-item">
+          <h5>Q3 2024</h5>
+          <ul>
+            <li>Launch remarkscopilot.beta.gov.sg</li>
+            <li>Administer NPS Survey</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <footer class="mt-5 text-center">
+      <p>Built by <a href="https://github.com/ghostleek">Kahhow</a> &middot; <a href="https://remarkscopilot-report.pages.dev/">Usage heatmap</a></p>
+    </footer>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    const sel = document.getElementById('quarter'); quarters.forEach(q=> sel.add(new Option(q,q)));
+    function render(q){
+      const idx = quarters.indexOf(q), prev = quarters[idx+1];
+      const d = metrics[q], p = metrics[prev] || {};
+      document.querySelectorAll('[data-metric]').forEach(el=> el.textContent = get(d,el.dataset.metric));
+      document.querySelectorAll('[data-change]').forEach(el=>{
+        const key = el.dataset.change;
+        const curr = parseNumber(get(d,key));
+        const prevv = parseNumber(get(p,key));
+        const pct = prevv ? ((curr-prevv)/prevv*100).toFixed(1) : 0;
+        el.textContent = (pct>=0 ? '+' : '') + pct + '%';
+        el.classList.remove('positive','negative');
+        el.classList.add(pct>=0 ? 'positive' : 'negative');
+      });
+    }
+    sel.addEventListener('change', ()=> render(sel.value));
+    sel.value = quarters[0];
+    render(sel.value);
+  </script>
+</body>
+</html>

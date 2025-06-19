@@ -1,0 +1,105 @@
+.metric-card {
+    border: 1px solid #e0e0e0;
+    border-radius: .5rem;
+    padding: 1.5rem;
+    background: #fff;
+  }
+  
+  .metric-card .display-6 {
+    font-weight: 700;
+  }
+  
+  .metric-card h5,
+  .metric-card h6 {
+    color: #6c757d;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+  
+  .metric-card small,
+  .metric-card p small {
+    display: block;
+    font-size: .875rem;
+    margin-top: .25rem;
+    margin-bottom: 0;
+  }
+  
+  .metric-card hr {
+    margin: 1rem 0;
+    border-color: #e0e0e0;
+  }
+  
+  .avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  .avatar-group img {
+    margin-right: -0.75rem;
+    border: 2px solid #fff;
+  }
+  
+  .badge-maint {
+    background-color: #d4edda;
+    color: #155724;
+    padding: .5rem 1rem;
+    border-radius: .5rem;
+    cursor: help;
+  }
+  
+  nav a {
+    margin-right: 1rem;
+    text-decoration: none;
+    color: #0d6efd;
+  }
+  
+  section {
+    padding-top: 4rem;
+    margin-top: -4rem;
+  }
+  
+  .change {
+    font-weight: 500;
+  }
+  
+  .change.positive {
+    color: #198754;
+  }
+  
+  .change.negative {
+    color: #dc3545;
+  }
+  
+  /* timeline */
+  .timeline {
+    position: relative;
+    margin-left: 2rem;
+    padding-left: 1rem;
+    border-left: 2px solid #0d6efd;
+  }
+  .timeline-item {
+    position: relative;
+    margin-bottom: 2rem;
+  }
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -1.6rem;
+    top: 0.4rem;
+    width: 1rem;
+    height: 1rem;
+    background: #0d6efd;
+    border-radius: 50%;
+  }
+  .timeline-item h5 {
+    color: #0d6efd;
+    font-weight: 600;
+    margin-bottom: .5rem;
+  }
+  .timeline-item ul {
+    margin-top: 0;
+    padding-left: 1.25rem;
+  }
+  

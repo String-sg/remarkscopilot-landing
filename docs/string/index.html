@@ -4,20 +4,20 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>String — Overview</title>
+    <title>String — Overview &amp; Metrics</title>
 
     <!-- fonts used in global stylesheet -->
     <link
         href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
         rel="stylesheet">
 
-    <!-- bootstrap (optional but keeps spacing utilities identical) -->
+    <!-- bootstrap (spacing utilities) -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- global report styling (one level up) -->
+    <!-- global report styling (one level up)  -->
     <link rel="stylesheet" href="../assets/style.css">
 
-    <!-- favicons (root-relative) -->
+    <!-- favicons  -->
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
     <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
@@ -30,25 +30,108 @@
 
         <nav class="mb-4">
             <a href="#overview">Overview</a>
+            <a href="#metrics">Metrics</a>
+            <a href="#updates">Updates</a>
         </nav>
 
-        <header class="mb-5">
-            <h1>String</h1>
-            <p class="lead">A work-in-progress citizen-run product for making social-care work easier.</p>
+        <!-- HERO -->
+        <header class="mb-5 d-flex justify-content-between align-items-start flex-wrap gap-3">
+            <div>
+                <h1>String</h1>
+                <p class="lead">Help public officers explore, discover, and adopt tech tools
+                </p>
+            </div>
+            <div class="text-end">
+                <span class="badge-rebuild" title="actively building &amp; iterating">Rebuild In Progress</span>
+                <p class="mt-2 small">Since 2023 · Built for Teachers (previously Public Officers)</p>
+            </div>
         </header>
 
+        <!-- OVERVIEW -->
         <section id="overview" class="mb-5">
             <h2>Overview</h2>
-
             <p>
-                Thank you for piloting <strong>String</strong> in
-                <em>Hack for Public Good 2023</em>.
+                Thank you for piloting <strong>String</strong> in <a href="https://www.hack.gov.sg/2023/string"><em>Hack
+                        for Public Good 2023</em></a>.
             </p>
-
-            <p class="fw-bold">
-                Work in progress — String will continue as a citizen-run product!
-            </p>
+            <p class="fw-bold">String will continue development as a citizen‑run product.</p>
         </section>
+
+        <!-- METRICS -->
+        <section id="metrics" class="mb-5">
+            <h2 class="mb-4">Metrics</h2>
+
+            <!-- Team -->
+            <div class="metric-card mb-4">
+                <h5>Team Members</h5>
+                <p class="display-6 d-inline">1*</p>
+                <p class="text-muted breakdown">1/10 Ops</p>
+                <div class="avatar-group mt-2">
+                    <img src="assets/team/kahhow.png" alt="Kahhow" class="avatar">
+                </div>
+            </div>
+
+            <!-- Cost -->
+            <div class="metric-card mb-4">
+                <h5>Total Costs</h5>
+                <p class="display-6">$13,608</p>
+                <small>$408 managed infra + $13,200 est. manpower</small>
+                <small class="text-muted">4 part‑time during HPG 2023</small>
+            </div>
+
+            <!-- Usage 2023 vs 2024*  -->
+            <div class="metric-card mb-4">
+                <h5>Usage</h5>
+                <div class="row gy-4">
+                    <div class="col-md-6">
+                        <p class="display-6">3.3k</p>
+                        <small>Active users (2023)</small>
+                        <hr>
+                        <p class="display-6">12.8k</p>
+                        <small>Total views (2023)</small>
+                    </div>
+                    <div class="col-md-6">
+                        <p class="display-6">4.4k</p>
+                        <small>New active users (2024*)</small>
+                        <span class="change positive">+33.7%</span>
+                        <hr>
+                        <p class="display-6">14.2k</p>
+                        <small>Total views (2024*)</small>
+                        <span class="change positive">+10.9%</span>
+                    </div>
+                </div>
+                <small class="d-block mt-3">*data up to 29 Oct 2024</small>
+            </div>
+
+            <!-- Community Solutions -->
+            <div class="metric-card mb-4">
+                <h5>Community‑contributed solutions</h5>
+                <div class="row text-center">
+                    <div class="col-md-6">
+                        <p class="display-6">15</p>
+                        <small>“For Teachers” (2023)</small>
+                    </div>
+                    <div class="col-md-6">
+                        <p class="display-6">WIP</p>
+                        <small>“For Teachers” (2024*)</small>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- UPDATES placeholder -->
+        <section id="updates" class="mb-5">
+            <h2>Updates</h2>
+            <p><em>No updates yet — stay tuned.</em></p>
+        </section>
+
+        <!-- footer nav across reports -->
+        <footer class="report-links">
+            <span>Other reports:</span>
+            <a href="/remarkscopilot/">Remarks Co‑Pilot</a>
+            <a href="/string/">String</a>
+            <a href="/whine/">Whine</a>
+        </footer>
 
     </div>
 

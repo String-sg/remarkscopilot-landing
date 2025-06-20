@@ -1,105 +1,187 @@
+:root {
+  --bg: #2E3135;
+  --card-bg: #33373B;
+  --card-alt-bg: #3A3D41;
+  --highlight: #75F8CC;
+  /* primary accent (links, nav, headings) */
+  --text: #FFFFFF;
+  --accent: #C0F4FB;
+  /* subtle secondary tint (small labels) */
+  --positive: #75F8CC;
+  --negative: #FF5E5E;
+}
+
+/* --------------------------------------------------
+   TYPOGRAPHY & BASE
+--------------------------------------------------*/
+html,
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Montserrat', sans-serif !important;
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Space Grotesk', sans-serif !important;
+  color: var(--text);
+  margin-top: 0;
+}
+
+/* --------------------------------------------------
+   CARDS
+--------------------------------------------------*/
 .metric-card {
-    border: 1px solid #e0e0e0;
-    border-radius: .5rem;
-    padding: 1.5rem;
-    background: #fff;
-  }
-  
-  .metric-card .display-6 {
-    font-weight: 700;
-  }
-  
-  .metric-card h5,
-  .metric-card h6 {
-    color: #6c757d;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-  }
-  
-  .metric-card small,
-  .metric-card p small {
-    display: block;
-    font-size: .875rem;
-    margin-top: .25rem;
-    margin-bottom: 0;
-  }
-  
-  .metric-card hr {
-    margin: 1rem 0;
-    border-color: #e0e0e0;
-  }
-  
-  .avatar {
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    object-fit: cover;
-  }
-  
-  .avatar-group img {
-    margin-right: -0.75rem;
-    border: 2px solid #fff;
-  }
-  
-  .badge-maint {
-    background-color: #d4edda;
-    color: #155724;
-    padding: .5rem 1rem;
-    border-radius: .5rem;
-    cursor: help;
-  }
-  
-  nav a {
-    margin-right: 1rem;
-    text-decoration: none;
-    color: #0d6efd;
-  }
-  
-  section {
-    padding-top: 4rem;
-    margin-top: -4rem;
-  }
-  
-  .change {
-    font-weight: 500;
-  }
-  
-  .change.positive {
-    color: #198754;
-  }
-  
-  .change.negative {
-    color: #dc3545;
-  }
-  
-  /* timeline */
-  .timeline {
-    position: relative;
-    margin-left: 2rem;
-    padding-left: 1rem;
-    border-left: 2px solid #0d6efd;
-  }
-  .timeline-item {
-    position: relative;
-    margin-bottom: 2rem;
-  }
-  .timeline-item::before {
-    content: '';
-    position: absolute;
-    left: -1.6rem;
-    top: 0.4rem;
-    width: 1rem;
-    height: 1rem;
-    background: #0d6efd;
-    border-radius: 50%;
-  }
-  .timeline-item h5 {
-    color: #0d6efd;
-    font-weight: 600;
-    margin-bottom: .5rem;
-  }
-  .timeline-item ul {
-    margin-top: 0;
-    padding-left: 1.25rem;
-  }
-  
+  border: 1px solid rgba(255, 255, 255, .15);
+  background: var(--card-bg) !important;
+  border-radius: .5rem;
+  padding: 1.5rem;
+}
+
+.metric-card .display-6 {
+  font-weight: 700;
+  color: var(--text) !important;
+  margin-bottom: .25rem;
+}
+
+.metric-card h5,
+.metric-card h6 {
+  color: var(--highlight);
+  font-weight: 600;
+  margin-bottom: .5rem;
+}
+
+.metric-card small,
+.metric-card p small {
+  display: block;
+  font-size: .875rem;
+  margin-top: .25rem;
+  color: var(--accent);
+}
+
+.metric-card hr {
+  margin: 1rem 0;
+  border-color: rgba(255, 255, 255, .15);
+}
+
+/* --------------------------------------------------
+   AVATARS
+--------------------------------------------------*/
+.avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--card-bg);
+}
+
+.avatar-group img {
+  margin-right: -.75rem;
+}
+
+/* --------------------------------------------------
+   BADGES / LABELS
+--------------------------------------------------*/
+.badge-maint {
+  background: var(--highlight);
+  color: var(--bg);
+  padding: .5rem 1rem;
+  border-radius: .5rem;
+  cursor: help;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* --------------------------------------------------
+   LINKS
+--------------------------------------------------*/
+/* regular links now use primary highlight */
+a,
+a:visited {
+  color: var(--highlight) !important;
+}
+
+a:hover {
+  opacity: .8;
+}
+
+/* nav stays highlight so reuse */
+nav a {
+  margin-right: 1rem;
+  text-decoration: none;
+  color: var(--highlight) !important;
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+/* --------------------------------------------------
+   LAYOUT HELPERS
+--------------------------------------------------*/
+section {
+  padding-top: 4rem;
+  margin-top: -4rem;
+}
+
+/* usage breakdown text */
+.breakdown {
+  color: var(--text) !important;
+  margin-top: .25rem;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* +/- deltas */
+.change {
+  font-weight: 500;
+  color: var(--text);
+}
+
+.change.positive {
+  color: var(--positive);
+}
+
+.change.negative {
+  color: var(--negative);
+}
+
+/* --------------------------------------------------
+   TIMELINE
+--------------------------------------------------*/
+.timeline {
+  position: relative;
+  margin-left: 2rem;
+  padding-left: 1rem;
+  border-left: 2px solid var(--highlight);
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -1.6rem;
+  top: .4rem;
+  width: 1rem;
+  height: 1rem;
+  background: var(--highlight);
+  border-radius: 50%;
+}
+
+.timeline-item h5 {
+  color: var(--highlight);
+  font-weight: 600;
+  margin-bottom: .5rem;
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.timeline-item ul {
+  margin-top: 0;
+  padding-left: 1.25rem;
+  color: var(--text);
+  font-family: 'Montserrat', sans-serif;
+}

@@ -96,6 +96,17 @@ h6 {
   font-family: 'Montserrat', sans-serif;
 }
 
+.badge-deprecated {
+  background: var(--negative);
+  /* #FF5E5E */
+  color: var(--bg);
+  /* dark text on bright pill */
+  padding: .5rem 1rem;
+  border-radius: .5rem;
+  font-family: 'Montserrat', sans-serif;
+}
+
+
 /* --------------------------------------------------
    LINKS
 --------------------------------------------------*/
@@ -184,4 +195,37 @@ section {
   padding-left: 1.25rem;
   color: var(--text);
   font-family: 'Montserrat', sans-serif;
+}
+
+/* --------------------------------------------------
+   FOOTER REPORT NAV
+--------------------------------------------------*/
+footer.report-links {
+  margin-top: 4rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, .15);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  /* center horizontally */
+  align-items: center;
+  /* vertical centering for single row */
+  text-align: center;
+}
+
+footer.report-links span {
+  opacity: .7;
+  font-size: .875rem;
+}
+
+footer.report-links a {
+  color: var(--accent) !important;
+  text-decoration: none;
+  font-weight: 500;
+  font-family: 'Montserrat', sans-serif;
+}
+
+footer.report-links a:hover {
+  color: var(--highlight) !important;
 }
